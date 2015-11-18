@@ -28,7 +28,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text=""	/>
+            android:text=""	
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
         <Button
             android:id="@+id/bt_token1"
@@ -54,10 +56,12 @@
 
         <TextView
             android:id="@+id/tv_token2"
-            android:layout_width="wrap_content"
+            android:layout_width="20dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="" />
+            android:text="" 
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
         <Button
             android:id="@+id/bt_token2"
@@ -83,10 +87,12 @@
 
         <TextView
             android:id="@+id/tv_token3"
-            android:layout_width="wrap_content"
+            android:layout_width="20dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="" />
+            android:text="" 
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
         <Button
             android:id="@+id/bt_token3"
@@ -112,10 +118,12 @@
 
         <TextView
             android:id="@+id/tv_token4"
-            android:layout_width="wrap_content"
+            android:layout_width="20dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="" />
+            android:text="" 
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
         <Button
             android:id="@+id/bt_token4"
