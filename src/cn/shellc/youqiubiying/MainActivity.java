@@ -15,8 +15,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		initView();	
-		setContentView(R.layout.activity_main);
-			
+		setContentView(R.layout.activity_main);	
 		
 	}
 
@@ -54,7 +53,8 @@ public class MainActivity extends Activity {
 		token1.changeNumber(this, token1);
 		token2.changeNumber(this, token2);
 		token3.changeNumber(this, token3);
-		token4.changeNumber(this, token4);		
+		token4.changeNumber(this, token4);	
+		
 		
 		
 	}
