@@ -44,19 +44,19 @@ public class Token {
 
 	// 点击“使用”按钮
 	public void setOnClickListner(final Context context, final Token token) {
-		tokenButton.setOnClickListener(new OnClickListener() {
-
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				new AlertDialog.Builder(context).setTitle("确认使用").setMessage("确定使用此券吗？").setNegativeButton("不用也罢", null)
-						.setPositiveButton("莫要拦我", new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {
-						useToken(context, token);
-					}
-				}).show();
-
-			};
-		});
+//		tokenButton.setOnClickListener(new OnClickListener() {
+//
+//			public void onClick(View v) {
+//				// TODO Auto-generated method stub
+//				new AlertDialog.Builder(context).setTitle("确认使用").setMessage("确定使用此券吗？").setNegativeButton("不用也罢", null)
+//						.setPositiveButton("莫要拦我", new DialogInterface.OnClickListener() {
+//					public void onClick(DialogInterface dialog, int which) {
+//						useToken(context, token);
+//					}
+//				}).show();
+//
+//			};
+//		});
 
 	}
 
@@ -78,7 +78,7 @@ public class Token {
 
 	}
 
-	private void sendSMS(Token token) {
+	public void sendSMS(Token token) {
 		// TODO Auto-generated method stub
 		String tokenname = null;
 		switch (token.toString()) {
@@ -104,13 +104,13 @@ public class Token {
 	}
 
 	public void changeNumber(Context context, final Token token) {
-		SharedPreferences sharedPreferences = context.getSharedPreferences("token", Context.MODE_PRIVATE);
-		final int number = sharedPreferences.getInt(token.toString(), 0);
-		tokenText.post(new Runnable() {
-			public void run() {
-				token.tokenText.setText(new Integer(number).toString());
-			}
-		});
+//		SharedPreferences sharedPreferences = context.getSharedPreferences("token", Context.MODE_PRIVATE);
+//		final int number = sharedPreferences.getInt(token.toString(), 0);
+//		tokenText.post(new Runnable() {
+//			public void run() {
+//				token.tokenText.setText(new Integer(number).toString());
+//			}
+//		});
 	}
 
 	public void setTokenImage(ImageView tokenImage) {
