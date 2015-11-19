@@ -7,21 +7,23 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="cn.shellc.youqiubiying.MainActivity">
+    tools:context="cn.shellc.youqiubiying.MainActivity"
+    android:background="@raw/backgroud">
 
     <!-- 第一组 -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:orientation="horizontal" >
+        android:orientation="horizontal" 
+        android:layout_marginTop="15dp">
 
         <ImageView
             android:id="@+id/iv_token1"
             android:layout_width="150dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
-            android:background="@raw/test" />
+            android:background="@raw/dieyi" />
 
         <TextView
             android:id="@+id/tv_token1"
@@ -52,7 +54,7 @@
             android:layout_width="150dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
-            android:background="@raw/test" />
+            android:background="@raw/shuaxie" />
 
         <TextView
             android:id="@+id/tv_token2"
@@ -83,7 +85,7 @@
             android:layout_width="150dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
-            android:background="@raw/test" />
+            android:background="@raw/meishi" />
 
         <TextView
             android:id="@+id/tv_token3"
@@ -114,7 +116,7 @@
             android:layout_width="150dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
-            android:background="@raw/test" />
+            android:background="@raw/renyi" />
 
        
         <TextView
