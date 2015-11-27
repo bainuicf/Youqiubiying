@@ -1,7 +1,12 @@
 package cn.shellc.youqiubiying;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -44,13 +49,11 @@ public class MainActivity extends Activity {
 				(ImageView)findViewById(R.id.iv_token4), 
 				(TextView)findViewById(R.id.tv_token4), 
 				(Button)findViewById(R.id.bt_token4));	
-		
-		
-		token1.changeNumber(this);
-		token2.changeNumber(this);
-		token3.changeNumber(this);
-		token4.changeNumber(this);
-		
+		Handler handler=new Handler();		
+		token1.changeNumber(MainActivity.this,handler);
+		token2.changeNumber(MainActivity.this,handler);
+		token3.changeNumber(MainActivity.this,handler);
+		token4.changeNumber(MainActivity.this,handler);
 		
 		
 	}
