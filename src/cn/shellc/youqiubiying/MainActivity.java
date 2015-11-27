@@ -9,6 +9,7 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.telephony.gsm.SmsManager;
+import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,11 +17,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 @SuppressWarnings("deprecation")
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnClickListener{
 
 	//@Override
 	
 	private Token token1,token2,token3,token4;
+	private ImageView tokenPicView;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);		
@@ -58,37 +60,91 @@ public class MainActivity extends Activity {
 				(ImageView)findViewById(R.id.iv_token4), 
 				(TextView)findViewById(R.id.tv_token4), 
 				(Button)findViewById(R.id.bt_token4));
+		tokenPicView=(ImageView) findViewById(R.id.viewToken);
+		tokenPicView.setVisibility(View.GONE);
+		
 		
 		//设置“使用”按钮监听事件
-//		token1.getTokenButton().setOnClickListener(OnTokenButtonClickListener(token1));
-//		token2.getTokenButton().setOnClickListener(OnTokenButtonClickListener(token2));
-//		token3.getTokenButton().setOnClickListener(OnTokenButtonClickListener(token3));
-//		token4.getTokenButton().setOnClickListener(OnTokenButtonClickListener(token4));
-        
+		token1.getTokenButton().setOnClickListener(this);
+		token2.getTokenButton().setOnClickListener(this);
+		token3.getTokenButton().setOnClickListener(this);
+		token4.getTokenButton().setOnClickListener(this);	
 		
 		
+		//设置tokenImage监听事件
+		token1.getTokenImage().setOnClickListener(this);
+		token2.getTokenImage().setOnClickListener(this);
+		token3.getTokenImage().setOnClickListener(this);
+		token4.getTokenImage().setOnClickListener(this);
 		
+		//设置tokenPicView监听事件
+		tokenPicView.setOnClickListener(this);		
+
 	}
 	
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.bt_token1:		
+			btnClick(token1);
+			break;
+		case R.id.bt_token2:			
+			btnClick(token2);
+			break;
+		case R.id.bt_token3:			
+			btnClick(token3);
+			break;
+		case R.id.bt_token4:
+			btnClick(token4);
+			break;
+		case R.id.iv_token1:
+			ivClick(token1);
+			break;
+		case R.id.iv_token2:
+			ivClick(token2);
+			break;
+		case R.id.iv_token3:
+			ivClick(token3);
+			break;
+		case R.id.iv_token4:
+			ivClick(token4);
+			break;			
+		case R.id.viewToken:
+			viewClick();
+			break;
+			
+		default:
+			break;
+		}
+		
+	}
 
+	private void btnClick(final Token token) {
+		// TODO Auto-generated method stub
+		new AlertDialog.Builder(MainActivity.this)
+		.setTitle("确认使用")
+		.setMessage("女王大人确定使用此券吗？")
+		.setPositiveButton("莫要拦我", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				useToken(token);
+			}
+		})
+		.setNegativeButton("不用也罢", null)
+		.show();
+	}
 
-//	private OnClickListener OnTokenButtonClickListener(final Token token) {
-//		// TODO Auto-generated method stub
+	private void ivClick(Token token) {
+		// TODO Auto-generated method stub
+		tokenPicView.setBackground(token.getTokenImage().getBackground());
+		tokenPicView.setVisibility(View.VISIBLE);		
+	}
 	
-		 
-//		new AlertDialog.Builder(MainActivity.this)
-//		.setTitle("确认使用")
-//		.setMessage("女王大人确定使用此券吗？")
-//		.setPositiveButton("莫要拦我", new DialogInterface.OnClickListener() {
-//			public void onClick(DialogInterface dialog, int which) {
-//				useToken(token);
-//			}
-//		})
-//		.setNegativeButton("不用也罢", null)
-//		.show();
-//		return null;
-//	}
-
+	private void viewClick() {
+		// TODO Auto-generated method stub
+		tokenPicView.setBackground(null);
+		tokenPicView.setVisibility(View.GONE);		
+	}
 
 	private void initNum() {
 		// TODO Auto-generated method stub
