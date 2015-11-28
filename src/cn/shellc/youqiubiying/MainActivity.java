@@ -171,7 +171,7 @@ public class MainActivity extends Activity implements OnClickListener{
 	private void changeNum(final Token token) {
 		// TODO Auto-generated method stub
 		SharedPreferences sharedPreferences = MainActivity.this.getSharedPreferences("token", Context.MODE_PRIVATE);
-		final int number = sharedPreferences.getInt(token.getTokenname(), 0);
+		final int number = sharedPreferences.getInt(token.getTokenName(), 0);
 		new Handler().post(new Runnable() {
 			public void run() {
 				token.getTokenText().setText(Integer.toString(number));
@@ -184,12 +184,12 @@ public class MainActivity extends Activity implements OnClickListener{
 		// TODO Auto-generated method stub
 		SharedPreferences sharedPreferences = getSharedPreferences("token", Context.MODE_PRIVATE);
 		Editor editor = sharedPreferences.edit();
-		int number = sharedPreferences.getInt(token.getTokenname(), 0);
+		int number = sharedPreferences.getInt(token.getTokenName(), 0);
 		if (number == 0) {
 			Toast.makeText(MainActivity.this, "女王大人的兑换券用完，快去卖萌求宠爱吧！", Toast.LENGTH_SHORT).show();
 		} else {
 			number--;
-			editor.putInt(token.getTokenname(), number);
+			editor.putInt(token.getTokenName(), number);
 			editor.commit();
 			changeNum(token);
 			sendSMS(token);
@@ -202,17 +202,17 @@ public class MainActivity extends Activity implements OnClickListener{
 	public void sendSMS(Token token) {
 		// TODO Auto-generated method stub
 		String tokenname = null;
-		switch (token.getTokenname()) {
+		switch (token.getTokenName()) {
 		case "token1":
 			tokenname = "叠衣券";
 			break;
-		case "Token2":
+		case "token2":
 			tokenname = "刷鞋券";
 			break;
-		case "Token3":
-			tokenname = "按摩券";
+		case "token3":
+			tokenname = "美食券";
 			break;
-		case "Token4":
+		case "token4":
 			tokenname = "任意券";
 			break;
 		default:

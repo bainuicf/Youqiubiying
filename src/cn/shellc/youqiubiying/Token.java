@@ -6,7 +6,7 @@ import android.widget.TextView;
 import android.app.Activity;
 
 public class Token extends Activity {
-	private String tokenname;
+	private String tokenName;
 	private ImageView tokenImage;
 	private TextView tokenText;
 	private Button tokenButton;
@@ -14,19 +14,19 @@ public class Token extends Activity {
 	public Token(String name, ImageView iv, TextView tv, Button btn) {
 		// TODO Auto-generated constructor stub
 
-		setTokenname(name);
+		setTokenName(name);
 		setTokenImage(iv);
 		setTokenText(tv);
 		setTokenButton(btn);
 
 	}
 
-	public void setTokenname(String tokenname) {
-		this.tokenname = tokenname;
+	public void setTokenName(String tokenname) {
+		this.tokenName = tokenname;
 	}
 
-	public String getTokenname() {
-		return tokenname;
+	public String getTokenName() {
+		return tokenName;
 	}
 
 	public void setTokenImage(ImageView tokenImage) {
